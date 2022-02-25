@@ -14,6 +14,10 @@
 // Remove (delete) the last paragraph
 // (starts with "Available for purchase now…")
 
+// Create a listener on the "Buy Now!" link that responds to a click event.
+// When clicked, the the "Buy Now!" link should be removed
+// and replaced with text that says "Added to cart"
+
 $( document ).ready(function(){
     const $img = $('img')
     const color = $img.data('color')
@@ -26,14 +30,16 @@ $( document ).ready(function(){
     const $newA = $('<a>')
     $newA.text('Buy Now')
     $newA.attr('id', 'cta')
+    const $newP = $('<p>').text('Added to cart')
     $main.append($newA)
 
     $lastP.remove()
 
+    $newA.click(function(e){
+        $newA.remove()
+        $main.append($newP)
+    })
+
 })
 
 
-
-// Create a listener on the "Buy Now!" link that responds to a click event.
-// When clicked, the the "Buy Now!" link should be removed
-// and replaced with text that says "Added to cart"
