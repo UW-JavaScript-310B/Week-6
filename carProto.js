@@ -72,6 +72,5 @@ class ElectricCar extends Car{
 const tesla = new ElectricCar('tesla')
 
 tesla.accelerate()
-
 console.log(tesla.toString())
 console.log(`${tesla.model} current speed is ${tesla.currentSpeed} MPH`)
