@@ -49,3 +49,27 @@ console.log(acura.toString())
  */
 
 //  Create an instance, accelerate twice, brake once, and console log the instance.toString()
+
+
+class ElectricCar extends Car{
+    constructor(model){
+        super(model)
+        this.motor='electric'
+    }
+
+    accelerate() {
+        super.accelerate();
+        super.accelerate()
+    }
+
+    toString() {
+        return super.toString();
+    }
+
+}
+
+const tesla = new ElectricCar('tesla')
+
+tesla.accelerate()
+
+console.log(tesla.toString())
