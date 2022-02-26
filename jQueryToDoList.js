@@ -3,20 +3,19 @@
  */
 
 const $ulList = $('ul.today-list');
-const $liToDos = $ulList.children();
-const $li =   $('li')
-console.log($liToDos);
+// const $liToDos = $ulList.children();
+// const $li = $('li')
 
-$liToDos.on('click', function(e) {
-  let $this = $(this);
-  $(this).toggleClass('done');
-  console.log($liToDos);
-
-  })
+$(document).on('click', '.grab', function() {
+  $( this ).toggleClass( "done") ;
+});
 
 /**
  * Delete element when delete link clicked
  */
+ $(document).on('click', '.delete', function() {
+     $(this).parent().remove();
+ });
 
 /**
  * Adds new list item to <ul>
@@ -34,6 +33,8 @@ const addListItem = function (e) {
   //add class and a descr to the delete button
   $newA.attr('class', 'delete');
   $newA.text('Delete');
+  $newLi.attr('class', 'grab');
+
 
   //add text entered by user into the span el for the new list item
   $newSpan.text(text);
@@ -42,6 +43,7 @@ const addListItem = function (e) {
   $ulList.append($newLi);
   $newLi.append($newSpan);
   $newLi.append($newA)
+
 };
 
 // add listener for add
@@ -50,4 +52,3 @@ const $aButton = $('a.add-item')
 
 //create click event
 $aButton.on('click', addListItem)
-
