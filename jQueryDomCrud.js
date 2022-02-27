@@ -1,10 +1,6 @@
 // Create a new <a> element containing the text "Buy Now!"
 // with an id of "cta" after the last <p>
 
-// $( document ).ready(function(){
-//     alert("code is loaded")
-// })
-
 // Access (read) the data-color attribute of the <img>,
 // log to the console
 
