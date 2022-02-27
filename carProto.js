@@ -53,8 +53,6 @@ class ElectricCar extends Car {
     }
  //why is undefined showing up between my original to string and the added string
     toString() {
-        // console.log(`My ${this.model} has an ${this.motor} motor! It's going ${this.currentSpeed}`)
-        // super.toString()
         console.log( `${super.toString()}  The car has an ${this.motor} motor.`);
     }
 

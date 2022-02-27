@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+
 // Do not change
 document.getElementById('cat').addEventListener('click', () => {
   alert('meow!');
@@ -9,7 +11,7 @@ document.getElementById('cat').addEventListener('click', () => {
 $('#more-info').on('click', function(e) {
   e.preventDefault();
   alert("Here's some info");
-  })
+  });
 
 
 // When the bark button is clicked, should alert "Bow wow!"
@@ -18,4 +20,6 @@ $('#more-info').on('click', function(e) {
 $('#dog').on('click', function(e) {
   e.stopPropagation();
   alert('Bow Wow!');
-  })
+  });
+
+});
