@@ -13,6 +13,7 @@ img {
   padding: 10px 20px;
   background-color: cadetblue;
   color: white;
+  cursor: pointer;
 }
 
 .highlight {

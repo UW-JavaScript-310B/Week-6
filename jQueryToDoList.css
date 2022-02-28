@@ -37,6 +37,7 @@ a {
   font-size: 0.8em;
   color: white;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 li.done span {
