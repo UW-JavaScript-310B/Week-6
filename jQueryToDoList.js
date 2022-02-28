@@ -10,8 +10,13 @@
  * Adds new list item to <ul>
  */
 const addListItem = function (e) {
+  console.log("addList");
   e.preventDefault();
   const text = $("input").val();
+  //const $newLi = $("<li>");
+  $todayList = $("ul.today-list");
+  const $newLi = $(`<li><span>${text}</span><a class="delete">Delete</a></li>`);
+  $todayList.append($newLi);
 
   // rest here...
 };
@@ -64,12 +69,10 @@ const deleteListItem = function (event) {
   this.parentNode.remove();
 };
 
-const addButton = document.querySelector(".add-item");
-const deleteButton = document.querySelector(".delete");
-const listElement = document.getElementsByClassName("today-list");
-const listItem = document.querySelector("ul.today-list li:first-child span");
-addButton.addEventListener("click", addListItem);
-listItem.addEventListener("click", clickListItem);
+$addButton = $(".add-item");
+$listItem = $("ul.today-list li span");
+console.log($listItem);
+$addButton.on("click", addListItem);
+$listItem.on("click", clickListItem);
 $delete = $(".delete");
-console.log($delete);
 $delete.on("click", deleteListItem);
