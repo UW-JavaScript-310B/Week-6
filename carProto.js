@@ -6,9 +6,8 @@
 class Car {
     constructor ( model ) {
         this.model = model;
-        this.currentSpeed = 0; // currentSpeed here?
+        this.currentSpeed = 0;
     }
-    currentSpeed = 0; // or currentSpeed here?
     accelerate() {
         this.currentSpeed += 1;
         return this.currentSpeed;
@@ -24,7 +23,7 @@ class Car {
 
 
 //  Create an instance, accelerate twice, brake once, and console log the instance.toString()
-const silverCar = new Car(Prius);
+const silverCar = new Car('Prius');
 silverCar.accelerate();
 silverCar.accelerate();
 silverCar.brake();
@@ -36,15 +35,20 @@ console.log(silverCar.toString());
  */
 class ElectricCar extends Car {
     constructor ( model ) {
-        super ( model );
+        super(model);
         this.motor = 'electric';
-    };
+    }
     accelerate() {
-        this.accelerate();
-        this.accelerate();
+        super.accelerate();
+        super.accelerate();
     }
     toString() {
-        return `This ${this.motor} ${super.model} is moving at ${super.currentSpeed}`
+        return `This ${this.motor} ${this.model} is moving at ${this.currentSpeed}`
     }
 }
 //  Create an instance, accelerate twice, brake once, and console log the instance.toString()
+const redCar = new ElectricCar("Model S");
+redCar.accelerate();
+redCar.accelerate();
+redCar.brake();
+console.log(redCar.toString());
