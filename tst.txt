@@ -1,0 +1,53 @@
+Is there a better way to chain in JS? 
+for example in python: 
+
+class Something:
+    def __init__(self, something):
+        self.something =something
+    def A1(something):
+        ...
+    def B1(something):
+        ...
+    def C1(something):
+          ...
+test = Something('Test')
+print(test.A1.B1.C1) 
+
+you can chain the methods in one line
+
+I know that in JS
+
+class Something{
+    constructor(test){
+        this.test = test
+    }
+    methodA(){
+        ...
+    }
+    methodB(){
+        ...
+    }
+    methodC(){
+        ...
+    }
+}
+
+const test = new Something('test')
+
+test.methodA
+test.methodB
+test.methodC
+
+but when chained 
+
+test.methodA.methodB.methodC
+
+the function breaks since it can't access the previvous chain prototype value as i understand it
+
+question is... is there a way to access the prototype in one single line like in python... that would just seem more efficient
+
+i've done some research but nothing comes up on it
+
+ANWSWER: 
+It's a Python Feature, it cannot be done in JS unless currying or closure is done, but that is for a more linear set on instructions
+
