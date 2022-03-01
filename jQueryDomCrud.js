@@ -1,3 +1,28 @@
+
+$(document).ready(function() {
+
+    const buyNowLink = $('<a>');
+        buyNowLink.attr('id', 'cta');
+        buyNowLink.text('Buy now!');
+        buyNowLink.insertAfter($('p'));
+    
+    
+    const $img = $('img');
+    const color = $img.data('color');
+
+    const $li = $('li');
+        $li.eq(2).addClass('highlight')
+
+     $('p').remove();
+     
+     $('a').click(function() {
+            $('a')
+              .replaceWith('Added to Cart');
+         });
+
+});
+
+
 // Create a new <a> element containing the text "Buy Now!"
 // with an id of "cta" after the last <p>
 
