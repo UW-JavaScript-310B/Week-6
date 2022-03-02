@@ -17,12 +17,14 @@ $("ul").on("click", function(e) {
 /**
  * Adds new list item to <ul>
  */
-const addListItem = function() {
-  //e.preventDefault();
+const addListItem = function(e) {
+  e.preventDefault();
   const listItemText = $('input').val();
   $("ul").append(`<li><span>${listItemText}</span><a class="delete">Delete</a></li>`);
 };
 
-$(".add-item").on("click", function() {
-  addListItem();
+$(".add-item").on("click", function(e) {
+  if(e.target.parentElement.firstElementChild.value) {
+    addListItem(e);
+  }
 });
