@@ -1,5 +1,5 @@
-const addListItem = function (e) {
-  e.preventDefault();
+const addListItem = function (event) {
+  event.preventDefault();
   const text = $("input").val();
   const $newLi = $(`<li><span>${text}</span><a class="delete">Delete</a></li>`);
   let $listItem = $("ul.today-list li span");
@@ -14,11 +14,14 @@ const addListItem = function (e) {
 };
 
 const clickListItem = function (event) {
-  this.parentNode.classList.toggle("done");
+  let $this = $(this);
+  console.log($this);
+  $this.parent().toggleClass(`done`);
 };
 
 const deleteListItem = function (event) {
-  this.parentNode.remove();
+  let $this = $(this);
+  $this.parent().remove();
 };
 
 $addButton = $(".add-item");
