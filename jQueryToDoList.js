@@ -15,7 +15,6 @@ const addListItem = function (event) {
 
 const clickListItem = function (event) {
   let $this = $(this);
-  console.log($this);
   $this.parent().toggleClass(`done`);
 };
 
