@@ -29,12 +29,10 @@ $(document).ready(function () {
   // When clicked, the the "Buy Now!" link should be removed
   // and replaced with text that says "Added to cart"
   const highlightItem = function (event) {
-    console.log(`YUP`);
-    console.log(event);
-    this.text("Added to cart");
+    let $this = $(this);
+    $this.text("Added to cart");
   };
 
   const $newAtagText = $(`a#cta`);
-  console.log($newAtagText);
   $newAtagText.on("click", highlightItem);
 });
