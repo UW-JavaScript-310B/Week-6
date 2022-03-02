@@ -2,15 +2,19 @@
  * Toggles "done" class on <li> element
  */
 $("ul").on("click", function(e) {
-  e.target.parentElement.classList.toggle("done");
+  if($(e.target)[0].className !== 'delete') {
+    $(e.target).parent().toggleClass("done");
+  }
 });
 
 /**
  * Delete element when delete link clicked
  */
  $("ul").on("click", function(e) {
-  if(e.target.className === 'delete') {
-    e.target.parentElement.remove();
+  if($(e.target)[0].className === 'delete') {
+    $(e.target).parent().fadeOut("slow", function() {
+      $(e.target).parent().remove();
+    });
   }
 });
 
