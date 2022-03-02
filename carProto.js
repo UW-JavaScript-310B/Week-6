@@ -20,8 +20,8 @@ class Car {
     console.log(`${this.model} is currently going ${this.speed} mph.`);
   }
 }
-//  Create an instance, accelerate twice, brake once, and console log the instance.toString()
 
+//  Create an instance, accelerate twice, brake once, and console log the instance.toString()
 /**
  * ElectricCar class
  * @constructor
