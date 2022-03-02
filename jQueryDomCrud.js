@@ -2,8 +2,10 @@ $( document ).ready(function() {
 // Create a new <a> element containing the text "Buy Now!"
 // with an id of "cta" after the last <p>
     let $newA = $('<a>');
+    
     $newA.text("Buy Now!");
     $newA.attr('id', 'cta');
+    
     let $main = $('main');
     $main.append($newA);
 
@@ -11,7 +13,9 @@ $( document ).ready(function() {
 // log to the console
     let $img = $('img');
     let color = $img.data('color');
+    // Both of these work:
     console.log(color);
+    console.log($img.data('color'));
 
 // Update the third <li> item ("Turbocharged"),
 // set the class name to "highlight"
@@ -26,8 +30,19 @@ $( document ).ready(function() {
 // Create a listener on the "Buy Now!" link that responds to a click event.
 // When clicked, the the "Buy Now!" link should be removed
 // and replaced with text that says "Added to cart"
-    $(newA).click(function(e) {
-        // need code to delete existing text (or use Kevin's technique)
-        $newA.text("Added to cart");
+    let $newP = $('<p>');
+    $newP.text("Added to cart");
+    
+    $newA.click(function(e) {
+        $newA.remove();
+        $main.append($newP);
     });
 });
+
+/**
+ * Lean version:
+ * let $newA = $('<a>').text("Buy Now!").attr('id','cta').click(function(e) {
+ *   $newA.remove();
+ *   $main.append($newP);
+ * });
+ */
