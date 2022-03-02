@@ -30,5 +30,6 @@ const addListItem = function(e) {
 $(".add-item").on("click", function(e) {
   if(e.target.parentElement.firstElementChild.value) {
     addListItem(e);
+    e.target.parentElement.firstElementChild.value = '';
   }
 });
