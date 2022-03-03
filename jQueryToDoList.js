@@ -2,6 +2,18 @@
  * Toggles "done" class on <li> element
  */
 
+const doneItem = function(e) {
+  e.preventDefault();
+  if (this) {
+    this.parentNode.className = 'done'
+  }
+
+}
+
+$(document).ready(function (){
+  $('span').click(doneItem)
+})
+
 /**
  * Delete element when delete link clicked
  */
@@ -21,7 +33,11 @@ const deleteListItem = function (e){
 
   //
 
-  ulEl.removeChild(liEl)
+  //ulEl.removeChild(liEl)
+
+  if(this){
+    ulEl.removeChild(liEl)
+  }
 
 }
 
@@ -65,6 +81,10 @@ const addListItem = function(e) {
 
   // spanElem.addEventListener('click', doneItem)
   //
+
+  $(document).ready(function (){
+    $('span').click(doneItem)
+  })
   //aElem.addEventListener('click', deleteListItem)
 
   //$('.delete').click(deleteListItem)
@@ -79,6 +99,11 @@ const addListItem = function(e) {
 
 // add listener for add
 
+$(document).ready(function (){
+  $('.add-item').click(addListItem)
+})
+
+
 //able to log add-item event
 
 // $(document).ready(function (){
@@ -88,9 +113,5 @@ const addListItem = function(e) {
 //     console.log('hello')
 //   })
 // })
-
-$(document).ready(function (){
-  $('.add-item').click(addListItem)
-})
 
 
