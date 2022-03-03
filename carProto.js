@@ -30,7 +30,7 @@ const rav4 = new Car('Toyota Rav4');
 rav4.accelerate();
 rav4.accelerate();
 rav4.brake();
-rav4.toString() 
+rav4.toString()
 
 
 /**
@@ -48,18 +48,20 @@ class ElectricCar extends Car {
     }
 
     accelerate() {
-         super.accelerate();
-         super.accelerate();
+        super.accelerate();
+        super.accelerate();
     }
- //why is undefined showing up between my original to string and the added string
+    //why is undefined showing up between my original to string and the added string
     toString() {
-        console.log( `${super.toString()}  The car has an ${this.motor} motor.`);
+         super.toString() 
+         console.log(`It has an ${this.motor} motor.`);
+       
     }
 
 
 }
 
-const prius = new ElectricCar ('Toyota Prius');
+const prius = new ElectricCar('Toyota Prius');
 console.log(prius)
 
 prius.accelerate();
