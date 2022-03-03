@@ -16,7 +16,7 @@ $( document ).ready(function(){
 
   })
 
-  // ise stopPropagation to avoid the 'cat' element to kick in and alert 'meow'
+  // use stopPropagation to avoid the 'cat' element to kick in and alert 'meow'
 
   $('button').on('click', function(e){
     alert("Bow wow!")
