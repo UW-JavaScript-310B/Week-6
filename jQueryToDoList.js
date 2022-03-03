@@ -65,7 +65,10 @@ const addListItem = function(e) {
   //
   //aElem.addEventListener('click', deleteListItem)
 
-  $('.delete').click(deleteListItem)
+  //$('.delete').click(deleteListItem)
+  $(document).ready(function (){
+    $('.delete').click(deleteListItem)
+  })
 
   ulElem.append(liElem)
 
