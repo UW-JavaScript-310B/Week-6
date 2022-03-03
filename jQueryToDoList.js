@@ -19,6 +19,8 @@ const deleteListItem = function (e){
 
   //console.log(ulEl)
 
+  //
+
   ulEl.removeChild(liEl)
 
 }
