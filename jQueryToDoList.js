@@ -44,6 +44,8 @@ const addListItem = function(e) {
 
   // rest here...
 
+  //
+
   const mainElem = this.parentNode.parentNode
 
   const ulElem = mainElem.getElementsByTagName('ul')[0]
