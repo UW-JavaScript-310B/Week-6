@@ -3,7 +3,7 @@ $(document).ready(function() {
    * Toggles "done" class on <li> element
    */
   $("ul").on("click", function(e) {
-    if($(e.target)[0].className !== 'delete') {
+    if($(e.target).attr("class") !== "delete") {
       $(e.target).parent().toggleClass("done");
     }
   });
@@ -12,7 +12,7 @@ $(document).ready(function() {
    * Delete element when delete link clicked
    */
   $("ul").on("click", function(e) {
-    if($(e.target)[0].className === 'delete') {
+    if($(e.target).attr("class") === "delete") {
       $(e.target).parent().fadeOut("slow", function() {
         $(e.target).parent().remove();
       });
@@ -24,15 +24,24 @@ $(document).ready(function() {
    */
   const addListItem = function(e) {
     e.preventDefault();
-    const newListItem = $("<li></li>").append($("<span></span>").text($('input').val()));
+    const newListItem = $("<li></li>").append($("<span></span>").text($("input").val()));
     const deleteButton = $("<a></a>").addClass("delete").text("Delete");
     $("ul").append(newListItem.append(deleteButton));
   };
 
   $(".add-item").on("click", function(e) {
-    if(e.target.parentElement.firstElementChild.value) {
-      addListItem(e);
-      e.target.parentElement.firstElementChild.value = '';
+    try{
+      if($(e.target).parent().children().first().val() == '') {
+        throw "Error: To do item cannot be empty. Please try again.";
+      }
+      else {
+        addListItem(e);
+        $("#error").remove();
+        $(e.target).parent().children().first().val("");
+      }
+    }
+    catch(err) {
+      $("<p></p>").attr("id", "error").text(err).css("color", "red").insertAfter(".add")
     }
   });
 });
