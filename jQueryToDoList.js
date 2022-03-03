@@ -24,8 +24,9 @@ $(document).ready(function() {
    */
   const addListItem = function(e) {
     e.preventDefault();
-    const listItemText = $('input').val();
-    $("ul").append(`<li><span>${listItemText}</span><a class="delete">Delete</a></li>`);
+    const newListItem = $("<li></li>").append($("<span></span>").text($('input').val()));
+    const deleteButton = $("<a></a>").addClass("delete").text("Delete");
+    $("ul").append(newListItem.append(deleteButton));
   };
 
   $(".add-item").on("click", function(e) {
