@@ -18,22 +18,12 @@ $(document).ready(function (){
  * Delete element when delete link clicked
  */
 
-
-
 const deleteListItem = function (e){
   e.preventDefault()
 
   const liEl=this.parentNode
 
-  //console.log(liEl)
-
   const ulEl=liEl.parentNode
-
-  //console.log(ulEl)
-
-  //
-
-  //ulEl.removeChild(liEl)
 
   if(this){
     ulEl.removeChild(liEl)
@@ -45,15 +35,12 @@ $(document).ready(function (){
   $('.delete').click(deleteListItem)
 })
 
-
-
 /**
  * Adds new list item to <ul>
  */
 const addListItem = function(e) {
   e.preventDefault();
   const text = $('input').val();
-  //console.log('add item clicked')
 
   // rest here...
 
@@ -85,9 +72,7 @@ const addListItem = function(e) {
   $(document).ready(function (){
     $('span').click(doneItem)
   })
-  //aElem.addEventListener('click', deleteListItem)
 
-  //$('.delete').click(deleteListItem)
   $(document).ready(function (){
     $('.delete').click(deleteListItem)
   })
@@ -103,15 +88,5 @@ $(document).ready(function (){
   $('.add-item').click(addListItem)
 })
 
-
-//able to log add-item event
-
-// $(document).ready(function (){
-//   //const $addItem = $('add-item')
-//   $('.add-item').click(function (e){
-//     e.preventDefault()
-//     console.log('hello')
-//   })
-// })
 
 
