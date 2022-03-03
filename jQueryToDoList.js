@@ -6,6 +6,29 @@
  * Delete element when delete link clicked
  */
 
+
+
+const deleteListItem = function (e){
+  e.preventDefault()
+
+  const liEl=this.parentNode
+
+  //console.log(liEl)
+
+  const ulEl=liEl.parentNode
+
+  //console.log(ulEl)
+
+  ulEl.removeChild(liEl)
+
+}
+
+$(document).ready(function (){
+  $('.delete').click(deleteListItem)
+})
+
+
+
 /**
  * Adds new list item to <ul>
  */
@@ -40,7 +63,9 @@ const addListItem = function(e) {
 
   // spanElem.addEventListener('click', doneItem)
   //
-  // aElem.addEventListener('click', deleteListItem)
+  //aElem.addEventListener('click', deleteListItem)
+
+  $('.delete').click(deleteListItem)
 
   ulElem.append(liElem)
 
