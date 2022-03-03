@@ -53,6 +53,7 @@ class ElectricCar extends Car {
     }
 
     toString() {
+        super.toString()
         console.log(`My $80,000 ${this.model} has an ${this.motor} motor!`);
     }
 
