@@ -10,7 +10,7 @@
  * Adds new list item to <ul>
  */
 const addListItem = function(e) {
-  //e.preventDefault();
+  e.preventDefault();
   const text = $('input').val();
   console.log('add item clicked')
 
@@ -19,19 +19,18 @@ const addListItem = function(e) {
 
 // add listener for add
 
+//able to log add-item event
+
 // $(document).ready(function (){
-//   const $addItem = $('add-item')
-//   $addItem.click(function (e){
+//   //const $addItem = $('add-item')
+//   $('.add-item').click(function (e){
+//     e.preventDefault()
 //     console.log('hello')
 //   })
 // })
 
 $(document).ready(function (){
-  //const $addItem = $('add-item')
-  $('.add-item').click(function (e){
-    e.preventDefault()
-    console.log('hello')
-  })
+  $('.add-item').click(addListItem)
 })
 
 
