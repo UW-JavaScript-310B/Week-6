@@ -1,3 +1,22 @@
+$(document).ready(function () {
+
+    const color = $('img').data('color');
+    console.log(color);
+
+    $('li').eq(2).addClass('highlight');
+
+    const $main = $('main');
+    const $newP = $('<p>').text('Added to card');
+
+    const $newA = $('<a>').text('Buy Now!').attr('id', 'cta').click(function () {
+        $newA.remove();
+        $main.append($newP);
+    });
+
+    $main.append($newA);
+
+})
+
 // Create a new <a> element containing the text "Buy Now!"
 // with an id of "cta" after the last <p>
 
