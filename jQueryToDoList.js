@@ -10,6 +10,8 @@ const doneItem = function(e) {
 
 }
 
+// jQuery listener for click on 'span' element
+
 $(document).ready(function (){
   $('span').click(doneItem)
 })
@@ -31,6 +33,8 @@ const deleteListItem = function (e){
 
 }
 
+// jQuery listener for click on the delete class element
+
 $(document).ready(function (){
   $('.delete').click(deleteListItem)
 })
@@ -44,50 +48,41 @@ const addListItem = function(e) {
 
   // rest here...
 
-  //
+  // biggest challenge was to figure out you have to add the angle brackets <> LOL!!!
 
-  const mainElem = this.parentNode.parentNode
+  let $ulElement = $('.today-list')
 
-  const ulElem = mainElem.getElementsByTagName('ul')[0]
+  let $listElem = $('<li>');
 
-  const liElem = document.createElement('li')
+  let $spanElem = $('<span>');
 
-  const spanElem = document.createElement('span')
+  $spanElem.text(text)
 
-  spanElem.textContent=text
+  $listElem.append($spanElem)
 
-  const aElem = document.createElement('a')
+  const $newA = $('<a>')
 
-  aElem.className="delete"
+  $newA.text('Delete')
+  $newA.addClass('delete')
 
-  const link = document.createTextNode('Delete')
+  $listElem.append($newA)
 
-  aElem.appendChild(link)
-
-  liElem.appendChild(spanElem)
-
-  liElem.appendChild(aElem)
-
-  // spanElem.addEventListener('click', doneItem)
-  //
+  $ulElement.append($listElem);
 
   $(document).ready(function (){
-    $('span').click(doneItem)
+    $('span').click(doneItem);
   })
 
   $(document).ready(function (){
-    $('.delete').click(deleteListItem)
+    $('.delete').click(deleteListItem);
   })
-
-  ulElem.append(liElem)
-
 
 };
 
 // add listener for add
 
 $(document).ready(function (){
-  $('.add-item').click(addListItem)
+  $('.add-item').click(addListItem);
 })
 
 
