@@ -32,11 +32,9 @@ const addListItem = function(e) {
   // rest here...
 
   let newLi = $('<li>');
-  let newSpan = $('<span>');
-  let newDelete = $('<a>').attr('class','delete');
+  let newSpan = $('<span>').text(text);
+  let newDelete = $('<a>').attr('class','delete').text('Delete');
 
-  newDelete.text('Delete');
-  newSpan.text(text);
   newLi.append(newSpan);
   newLi.append(newDelete);
   $('ul').append(newLi);  
