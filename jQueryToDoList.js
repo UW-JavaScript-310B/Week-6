@@ -23,12 +23,12 @@ $(document).ready(function (){
 const deleteListItem = function (e){
   e.preventDefault()
 
-  const liEl=this.parentNode
+  let $liEl=this.parentNode
 
-  const ulEl=liEl.parentNode
+  const $ulEl=$liEl.parentNode
 
   if(this){
-    ulEl.removeChild(liEl)
+    $ulEl.removeChild($liEl)
   }
 
 }
