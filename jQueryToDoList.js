@@ -15,8 +15,8 @@
 
   const $deleteBtn = $('.delete');
   function del(e){
-    e.target.parentElement.classList.toggle("hidden");
-    //$(this).addClass('hidden')
+    //e.target.parentElement.classList.toggle("hidden");
+    $(this).parent().addClass('hidden')
     //$(this).parent().remove();
 }
   $deleteBtn.on('click', del);
@@ -26,7 +26,7 @@
  */
  let $newLi = $('<li>');
 const addListItem = function(e) {
-  e.preventDefault();
+  
   const text = $('input').val();
  
   let $ul = $('ul').append(`<li><span>${text}</span><a class="delete">Delete</a></li>`);
