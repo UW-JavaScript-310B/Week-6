@@ -13,3 +13,15 @@
 // Create a listener on the "Buy Now!" link that responds to a click event.
 // When clicked, the the "Buy Now!" link should be removed
 // and replaced with text that says "Added to cart"
+
+$(document).ready(function() {
+    let imgDataColor = $('img').attr('data-color');
+    console.log(imgDataColor);
+    $('ul').find($('li')[2]).addClass('highlight');
+    $('p').after('<a id="cta">Buy Now!</a>');
+    $('p').remove();
+    $( "#cta" ).click(function() {
+        $('#cta').remove();
+        $('ul').after('<p>Added to cart</p>');
+      });
+});
