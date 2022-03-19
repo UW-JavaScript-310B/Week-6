@@ -1,15 +1,58 @@
-// Create a new <a> element containing the text "Buy Now!"
-// with an id of "cta" after the last <p>
 
-// Access (read) the data-color attribute of the <img>,
-// log to the console
+    
+$( document ).ready(function() {
+    
+        const $a = $('a');
+    
+        const $para = $('p');
 
-// Update the third <li> item ("Turbocharged"),
-// set the class name to "highlight"
+        $a.attr('id', 'cta');
+        
+        $a.text('Buy Now!');
+        
+        
 
-// Remove (delete) the last paragraph
-// (starts with "Available for purchase now…")
+        console.log($para);
+        console.log($a);
+        // Access (read) the data-color attribute of the <img>,
+        // log to the console
+        const $image = $('img');
+        
+        console.log($image[0].dataset.color);
+        
+      
+        
+        
+        
+        // Update the third <li> item ("Turbocharged"), 
+        // set the class name to "highlight"
+        const $list = $('li');
+        
+        console.log($list[2]);
+        
+        $list.eq(2).addClass('highlight');
+        
+        // Remove (delete) the last paragraph
+        // (starts with "Available for purchase now…")
 
-// Create a listener on the "Buy Now!" link that responds to a click event.
-// When clicked, the the "Buy Now!" link should be removed
-// and replaced with text that says "Added to cart"
+        $('body').append($a)
+        $para.remove()
+   
+        //Buy now replaced by added to cart//
+        
+
+        const $cart = $('<p>');
+        $cart.attr('id', 'cta');
+        $cart.text('This item has been added to your cart!');
+        $a.click(function(e) {
+          e.preventDefault();
+          $a.remove();
+          $('body').append($cart);
+
+        })
+        console.log($cart);
+
+        
+        
+       
+});
